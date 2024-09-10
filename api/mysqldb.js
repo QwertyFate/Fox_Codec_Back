@@ -75,4 +75,12 @@ const sendMessage = async (user1, user2, content) => {
     }catch(error){console.error(error)} 
 };
 
-module.exports = {ConnectingtoDB, findAll,compareuser ,RegisterNewUser,userArr,userID,sendMessage};
+const getMessages = async(user1,user2) => {
+    try{
+        const messagesData = 'SELECT * FROM `messages` WHERE(`sender_id`  = ? AND `receiver_id` = ?) OR (`sender_id` = ? AND `receiver_id` = ?)';
+        const [rows] = await connection.query(messagesData, [user1,user2,user2,user1]);
+        return(rows);
+    }catch(error){console.error(error)}
+}
+
+module.exports = {ConnectingtoDB, findAll,compareuser ,RegisterNewUser,userArr,userID,sendMessage, getMessages};
