@@ -29,14 +29,13 @@ const findAll = async (userID) => {
         const mysql = 'SELECT * FROM `Users`';
         const [rows, fields] = await connection.query(mysql);
         for(let i = 0; i< rows.length; i++){
-            if(rows[i].id !== userID){
-                userArr.push({
+            if(rows[i].id != userID){
+                    userArr.push({
                     id: rows[i].id,
                     username: rows[i].username
                 });
             }
         }
-        console.log(userArr);
       return(userArr);  
       } catch (err) {
         console.log(err);
