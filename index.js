@@ -78,10 +78,6 @@ app.post("/send-message", async (req,res) => {
     res.send("all good")
 })
 
-app.get("/getCurrentUser", async (req,res) => {
-    res.send({currentUserId});
-    console.log({currentUserId});
-})
 
 app.post("/get-messages", async (req,res) => {
     const messagesGathered = await getMessages(req.body.user1,req.body.user2);

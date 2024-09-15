@@ -33,7 +33,9 @@ const findAll = async (userID) => {
                     userArr.push({
                     id: rows[i].id,
                     username: rows[i].username
+                    
                 });
+                console.log(userArr)
             }
         }
       return(userArr);  
