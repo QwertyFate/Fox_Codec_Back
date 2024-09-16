@@ -6,13 +6,13 @@
                 "enableSsl": "Disabled"
             },
             "previewLimit": 50,
-            "server": "sql12.freesqldatabase.com",
-            "port": 3306,
+            "server": "o1j.h.filess.io",
+            "port": 3307,
             "driver": "MySQL",
             "name": "ChatApp",
-            "database": "sql12729202",
-            "username": "sql12729202",
-            "password": "j11pIkQjrk"
+            "database": "chatappdb_applesadbe",
+            "username": "chatappdb_applesadbe",
+            "password": "84ef98d9c77d1f2169cf74b7c4c3a403c17ea9c1"
         }
     ]
 }
