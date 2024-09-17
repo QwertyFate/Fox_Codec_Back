@@ -10,7 +10,7 @@ const ConnectingtoDB = async () => {
     if (!connection || connection.connection._closing) {
         try{
             connection = await mysql.createConnection({
-                host: '192.168.100.14',
+                host: 'http://192.168.100.14',
                 user: 'root',
                 password: '',
                 database: 'chatappdb',
