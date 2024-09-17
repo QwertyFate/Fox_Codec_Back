@@ -110,7 +110,7 @@ const sendMessage = async (user1, user2, content) => {
 const getMessages = async(user1,user2) => {
     let connection;
     try{
-        connection =pool.getConnection();
+        connection = await pool.getConnection();
         const messagesData = 'SELECT * FROM `messages` WHERE(`sender_id`  = ? AND `receiver_id` = ?) OR (`sender_id` = ? AND `receiver_id` = ?)';
         const [rows] = await connection.query(messagesData, [user1,user2,user2,user1]);
         return(rows);
