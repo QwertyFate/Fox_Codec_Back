@@ -10,11 +10,11 @@ const ConnectingtoDB = async () => {
     if (!connection || connection.connection._closing) {
         try{
             connection = await mysql.createConnection({
-                host: 'o1j.h.filess.io',
-                user: 'chatappdb_applesadbe',
-                password: process.env.SQL_PASSWORD,
-                database: 'chatappdb_applesadbe',
-                port: '3307'
+                host: 'localhost',
+                user: 'root',
+                password: '',
+                database: 'chatappdb',
+                port: '3306'
                 });
                 console.log("connected")
             } catch (error) {
