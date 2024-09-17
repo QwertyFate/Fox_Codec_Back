@@ -18,8 +18,7 @@ const ConnectingtoDB = async () => {
                 connectionLimit: 10,
                 waitForConnections: true,
                 queueLimit:0,
-                connectTimeout: 10000, // 10 seconds timeout for connecting
-
+                connectTimeout: 30000,
                 });
                 console.log("connected pool")
             } catch (error) {
