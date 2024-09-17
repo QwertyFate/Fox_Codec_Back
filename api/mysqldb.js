@@ -29,9 +29,10 @@ const ConnectingtoDB = async () => {
     }
 }
 const findAll = async (userID) => {
+    let connection;
     userArr = [];
     try {
-        const connection = await pool.getConnection();
+        connection = await pool.getConnection();
         const query = 'SELECT * FROM `Users`';
         const [rows] =  await connection.query(query);
         for(let i = 0; i< rows.length; i++){
@@ -51,9 +52,10 @@ const findAll = async (userID) => {
 }
 
 const RegisterNewUser = async (username, password) => {
+    let connection;
     const passwordHash = await bcrypt.hashSync(password, randomSalt);
     try{
-        const connection = await pool.getConnection();
+        connection = await pool.getConnection();
         const insertuser = 'INSERT INTO `Users` (`username`, `password_hash`) VALUES (?,?)';
         const [rows] = await connection.query(insertuser, [username, passwordHash]);
         console.log(rows);
@@ -87,8 +89,9 @@ const compareuser = async (username, password) => {
 }
 
 const sendMessage = async (user1, user2, content) => {
+    let connection;
     try{
-    const connection =pool.getConnection();
+    connection =pool.getConnection();
     const messageData = 'INSERT INTO `messages` (`sender_id`, `receiver_id`, `content`) VALUES (?,?,?)';
     const [rows] = await connection.query(messageData, [user1,user2,content]);
     }catch(error){console.error(error)
@@ -101,8 +104,9 @@ const sendMessage = async (user1, user2, content) => {
 };
 
 const getMessages = async(user1,user2) => {
+    let connection;
     try{
-        const connection =pool.getConnection();
+        connection =pool.getConnection();
         const messagesData = 'SELECT * FROM `messages` WHERE(`sender_id`  = ? AND `receiver_id` = ?) OR (`sender_id` = ? AND `receiver_id` = ?)';
         const [rows] = await connection.query(messagesData, [user1,user2,user2,user1]);
         return(rows);
