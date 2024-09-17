@@ -64,8 +64,9 @@ const RegisterNewUser = async (username, password) => {
 }
 
 const compareuser = async (username, password) => {
+    let connection;
     try{
-        const connection = await pool.getConnection();
+        connection = await pool.getConnection();
         const grabUser='SELECT * FROM `Users` WHERE `username` = ?';
         const [rows] = await connection.query(grabUser, username)
         if (rows.length === 0){
