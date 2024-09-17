@@ -10,10 +10,10 @@ const ConnectingtoDB = async () => {
     if (!connection || connection.connection._closing) {
         try{
             connection = await mysql.createConnection({
-                host: 'sql102.infinityfree.com',
-                user: 'if0_37324528',
+                host: 'database-1.cnkcq6sga73v.us-east-1.rds.amazonaws.com',
+                user: 'admin',
                 password: process.env.SQL_PASSWORD,
-                database: 'chatappdb',
+                database: 'Chatappdb',
                 port: '3306'
                 });
                 console.log("connected")

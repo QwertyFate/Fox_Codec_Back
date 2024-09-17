@@ -13,6 +13,34 @@
             "database": "chatappdb_applesadbe",
             "username": "chatappdb_applesadbe",
             "password": "84ef98d9c77d1f2169cf74b7c4c3a403c17ea9c1"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "sql102.infinityfree.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "DB",
+            "database": "if0_37324528_chatappdb",
+            "username": "\tif0_37324528",
+            "password": "ZiyexVZqLtq"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "database-1.cnkcq6sga73v.us-east-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "ChatappdbAmz",
+            "username": "admin",
+            "database": "Chatappdb",
+            "password": "Tigrex12321!"
         }
     ]
 }
