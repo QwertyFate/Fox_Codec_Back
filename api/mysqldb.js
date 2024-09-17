@@ -95,7 +95,7 @@ const compareuser = async (username, password) => {
 const sendMessage = async (user1, user2, content) => {
     let connection;
     try{
-    connection =pool.getConnection();
+    connection = await pool.getConnection();
     const messageData = 'INSERT INTO `messages` (`sender_id`, `receiver_id`, `content`) VALUES (?,?,?)';
     const [rows] = await connection.query(messageData, [user1,user2,content]);
     }catch(error){console.error(error)
