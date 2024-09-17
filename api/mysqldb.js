@@ -33,8 +33,8 @@ const findAll = async (userID) => {
     userArr = [];
     try {
         connection = await pool.getConnection();
-        const query = 'SELECT * FROM `Users`';
-        const [rows] =  await connection.query(query);
+        const findusers = 'SELECT * FROM `Users`';
+        const [rows] =  await connection.query(findusers);
         for(let i = 0; i< rows.length; i++){
             if(rows[i].id != userID){
                     userArr.push({
@@ -48,7 +48,11 @@ const findAll = async (userID) => {
       return(userArr);  
       } catch (err) {
         console.log(err);
-      } finally {if (connection) connection.release();}
+      } finally {
+        if (connection) {
+            connection.release();
+        }
+      }
 }
 
 const RegisterNewUser = async (username, password) => {
