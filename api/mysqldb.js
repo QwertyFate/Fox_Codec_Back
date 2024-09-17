@@ -10,10 +10,10 @@ const ConnectingtoDB = async () => {
     if (!pool) {
         try{
             pool = await mysql.createPool({
-                host: 'database-1.cnkcq6sga73v.us-east-1.rds.amazonaws.com',
-                user: 'admin',
+                host: 'o1j.h.filess.io',
+                user: 'chatappdb_applesadbe',
                 password: process.env.SQL_PASSWORD,
-                database: 'Chatappdb',
+                database: 'chatappdb_applesadbe',
                 port: '3306',
                 connectionLimit: 10,
                 waitForConnections: true,
