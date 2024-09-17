@@ -30,9 +30,8 @@ const ConnectingtoDB = async () => {
 }
 const findAll = async (userID) => {
     userArr = [];
-    let connection
     try {
-        connection = await pool.getConnection();
+        const connection = await pool.getConnection();
         const query = 'SELECT * FROM `Users`';
         const [rows] =  await connection.query(query);
         for(let i = 0; i< rows.length; i++){
